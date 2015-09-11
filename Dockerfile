@@ -9,6 +9,7 @@ FROM debian:wheezy
 # File Author / Maintainer
 MAINTAINER Joyce Babu <joyce@ennexa.com>
 
-RUN apt-get update && apt-get upgrade -y
+RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get upgrade -y
 
-RUN apt-get install -y vim wget procps net-tools
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y vim procps net-tools
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y wget ca-certificates
